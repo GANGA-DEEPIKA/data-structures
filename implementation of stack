@@ -1,0 +1,80 @@
+#include<stdlib.h>
+#include<stdio.h>
+#define size 5
+int top=-1,stk[size];
+void push()
+{
+	int ele;
+	printf("enter element");
+	scanf("%d",&ele);
+	if(top==size-1)
+	{
+		printf("stack is full");
+	}
+	else
+	{
+	top=top+1;
+	stk[top]=ele;
+	}
+}
+void pop()
+{
+	int ele;
+	if(top==-1)
+	printf("stack is empty");
+	else
+	{
+	ele=stk[top];
+	top=top-1;
+	printf("top element is %d",ele);
+}
+}
+	void peak()
+	{
+		if(top==-1)
+	printf("stack is empty");
+	else
+	printf("top element is %d",stk[top]);
+}
+void display()
+{
+	int i;
+	if(top==-1)
+printf("stack is empty");
+else
+for(i=top;i>=0;i--)
+printf("%d\n",stk[i]);
+			}
+	int main()
+	{
+		int cho;
+		do
+		{
+			printf("\n**main menu**\n");
+			printf("(1)push\n (2)pop\n (3)peak\n (4)display\n");
+			printf("enter the operation");
+			scanf("%d",&cho);
+				switch(cho)
+				{
+				case 1:
+					push();
+					break;
+			    case 2:
+					pop();
+					break;
+		        case 3:
+					peak();
+					break;
+		        case 4:
+					display();
+					break;
+		        case 5:
+				exit(0);
+	default:
+		printf("enter 1 to 5");
+	}
+}
+while(cho>=1 && cho<=5);
+return 0;
+}
+	
